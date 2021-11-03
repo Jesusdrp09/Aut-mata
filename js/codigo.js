@@ -77,7 +77,7 @@ function init() {
         $(go.Adornment, "Spot",
           $(go.Panel, "Auto",
             $(go.Shape, "RoundedRectangle", roundedRectangleParams,
-            { fill: null, stroke: "#7986cb", strokeWidth: 3 }),
+            { fill: null, stroke: "#7986cb", strokeWidth: 3 }),new go.Binding("fill", "color"),
             $(go.Placeholder)  // a Placeholder sizes itself to the selected Node
           ),
           // the button to create a "next" node, at the top-right corner
@@ -95,6 +95,7 @@ function init() {
           new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
           $(go.Shape, "Circle",
             {
+              name: "SHAPE",
               fill: "#52ce60", /* green */
               stroke: null,
               portId: "",
@@ -115,6 +116,7 @@ function init() {
           new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
           $(go.Shape, "Circle",
             {
+              name: "SHAPE",
               fill: "maroon",
               stroke: null,
               portId: "",
@@ -139,7 +141,7 @@ function init() {
         shadowOffset: new go.Point(0, 1),
         shadowColor: "rgba(0, 0, 0, .14)",
         desiredSize: new go.Size(70, 70)
-      },
+      }, 
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
       // define the node's outer shape, which will surround the TextBlock
       $(go.Shape, "circle", roundedRectangleParams,
@@ -204,7 +206,7 @@ function init() {
             curve: go.Link.Bezier,
             adjusting: go.Link.Stretch,
             reshapable: true, relinkableFrom: true, relinkableTo: true,
-            toShortLength: 3
+            toShortLength: 3,
           },
           new go.Binding("points").makeTwoWay(),
           new go.Binding("curviness"),
@@ -264,6 +266,8 @@ function init() {
           }
         }
       };
+
+
     }
 
     // Show the diagram's model in JSON format
