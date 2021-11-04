@@ -245,28 +245,6 @@ function init() {
 
       // read in the JSON data from the "mySavedModel" element
       load();
-      
-      let verificar = document.getElementById("verificar");
-      let btnVerificar = document.getElementById("btnText-verificar");
-      let texto;
-      verificar.onclick = ()=>{
-        texto = btnVerificar.value;
-        let regExp = new RegExp("[ab]+","g");
-        regExp = regExp.exec(texto);
-        try {
-          if(texto == regExp[0]){
-            console.log("Lenguaje correcto");
-            
-          }else{
-            console.log("Hay palabras que no pertenecen al lenguaje");
-          } 
-        } catch (e) {
-          if(e instanceof TypeError){
-            console.log("error null");
-          }
-        }
-      };
-
 
     }
 
