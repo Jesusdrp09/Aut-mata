@@ -4,63 +4,77 @@ verificar.onclick = ()=>{
     let texto = document.getElementById("btnText-verificar").value;
     let regExp = new RegExp("[ab]+","g");
     regExp = regExp.exec(texto);
+    document.getElementById("resultado").innerHTML = "";
+    descolorear(myDiagram, true);
     try {
         if(texto == regExp[0]){
-            let resultado = verificarPalabra(myDiagram, texto, 0, 0);
-            if(resultado != false && (resultado.data.id == 2 || resultado.data.id == 3)){
-                console.log(resultado);
-            }else{
-                descolorear(myDiagram);
-            }
+            verificarPalabra(myDiagram, texto, 0, 0);
         }else{
             console.log("Hay simbolos que no pertenecen al lenguaje");
         } 
     } catch (e) {
         if(e instanceof TypeError){
-            console.log("Hay simbolos que no pertenecen al lenguaje");
+            console.log("Error null");
         }
     }
 };
 
 function verificarPalabra(diagrama, texto, indice, numNodo) {
     let nodo = diagrama.findNodeForKey(numNodo);
-    pintar(nodo);
-    if(indice < texto.length){
-        let aristas = nodo.findTreeChildrenLinks();
-        for(let i = 0; i < aristas.ia; i++){
-            let results = aristas.ub._dataArray.filter(function (arista) { return arista.data.text == texto.charAt(indice) && arista.fromNode == nodo;});   
-            let firstObj = (results.length > 0) ? true : false;
-            if(!firstObj){
-                return firstObj;
-            }else if(aristas.ub._dataArray[i].data.text == texto.charAt(indice)){
-                despintar(aristas.ub._dataArray[i].fromNode);
-                pintar(aristas.ub._dataArray[i].toNode);
-                return verificarPalabra(diagrama, texto, indice + 1, aristas.ub._dataArray[i].toNode.data.id);
-            }
-        }
-    }else{ return nodo; }
+    window.setTimeout(function(){
+        pintar(nodo);
+        window.setTimeout(function(){
+            if(indice < texto.length){
+                    let aristas = nodo.findTreeChildrenLinks();
+                    for(let i = 0; i < aristas.ia; i++){
+                        let results = aristas.ub._dataArray.filter(function (arista) { return arista.data.text == texto.charAt(indice) && arista.fromNode == nodo;});   
+                        let firstObj = (results.length > 0) ? true : false;
+                        if(!firstObj){
+                            descolorear(diagrama, true);
+                            return esAceptado(nodo, false);
+                        }else if(aristas.ub._dataArray[i].data.text == texto.charAt(indice)){
+                            despintar(aristas.ub._dataArray[i].fromNode);
+                            pintar(aristas.ub._dataArray[i].toNode);
+                            return verificarPalabra(diagrama, texto, indice + 1, aristas.ub._dataArray[i].toNode.data.id);
+                        }
+                    }
+            }else{ return esAceptado(nodo); }
+        }, 1000);
+    }, 500)
 }
 
 function pintar(nodo) {
-    window.setTimeout(function(){
-        var shape = nodo.findObject("SHAPE"); //Obtener la forma de un nodo
-        shape.fill = "red"; //Cambiar el color a un nodo   
-    }, 1000);
+    var shape = nodo.findObject("SHAPE"); //Obtener la forma de un nodo
+    shape.fill = "red"; //Cambiar el color a un nodo   
 }
 
 function despintar(nodo) {
-    window.setTimeout(function(){
-        if(nodo.data.category == "aceptar"){
-            var shape = nodo.findObject("SHAPE"); //Obtener la forma de un nodo
-            shape.fill = "#37FF1F"; //Cambiar el color a un nodo
-        }else{
-            var shape = nodo.findObject("SHAPE"); //Obtener la forma de un nodo
-            shape.fill = "white"; //Cambiar el color a un nodo
-        }  
-    }, 1000)    
+    if(nodo.data.category == "aceptar"){
+        var shape = nodo.findObject("SHAPE"); //Obtener la forma de un nodo
+        shape.fill = "#37FF1F"; //Cambiar el color a un nodo
+    }else{
+        var shape = nodo.findObject("SHAPE"); //Obtener la forma de un nodo
+        shape.fill = "white"; //Cambiar el color a un nodo
+    }  
 }
 
-function descolorear(diagrama){
-    despintar(diagrama.findNodeForKey(2));
-    despintar(diagrama.findNodeForKey(3));
+function descolorear(diagrama, limpiarTodo = false){
+    if(limpiarTodo){
+        despintar(diagrama.findNodeForKey(0));
+        despintar(diagrama.findNodeForKey(1));
+        despintar(diagrama.findNodeForKey(2));
+        despintar(diagrama.findNodeForKey(3));
+    }else{
+        despintar(diagrama.findNodeForKey(2));
+        despintar(diagrama.findNodeForKey(3));
+    }
+}
+
+function esAceptado(nodo, vertice = true){
+    if((nodo.data.id == 3 || nodo.data.id == 2) && vertice){
+        document.getElementById("resultado").innerHTML = "Estado de aceptación";
+        return 0;
+    }else{
+        document.getElementById("resultado").innerHTML = "Estado de NO aceptación";
+    }
 }
