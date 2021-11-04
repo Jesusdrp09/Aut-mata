@@ -1,5 +1,5 @@
 window.onclick = ()=>{
-    var node = myDiagram.findNodeForKey(1); //Encontrar un nodo por id
+    var node = myDiagram.findNodeForKey(0); //Encontrar un nodo por id
     myDiagram.select(node);
     console.log(node.data.id); //id de un nodo
     console.log(myDiagram);
@@ -11,6 +11,8 @@ window.onclick = ()=>{
     console.log(node.data.color);   
     console.log(node.data.loc);   
     console.log(node.data.text);   
-    let aristas = myDiagram.model.isGroupForNodeData(node);
-    console.log(aristas);
+    let aristas = node.findTreeChildrenLinks();
+    console.log(aristas.ub._dataArray[0].fromNode.data.id);
+    console.log(aristas.ub._dataArray[0].toNode.data.id);
+    console.log(aristas.ub._dataArray[0].data.text);
 }
