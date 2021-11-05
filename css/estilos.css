@@ -5,7 +5,7 @@ body{
 
 #cabecera{
     display: flex;
-    padding: 0.8rem 20rem;
+    padding: 0.8rem 10rem;
     background-color: #b7ced2;
 }
 
@@ -14,7 +14,7 @@ body{
 }
 
 #cabecera div{
-    width: 30vw;
+    width: 50vw;
     vertical-align: auto;
     color: black;
 }

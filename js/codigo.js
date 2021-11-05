@@ -112,7 +112,7 @@ function init() {
       );
 
       myDiagram.nodeTemplateMap.add("End",
-        $(go.Node, "Spot", { desiredSize: new go.Size(75, 75) },
+        $(go.Node, "Spot", { desiredSize: new go.Size(0, 0) },
           new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
           $(go.Shape, "Circle",
             {
