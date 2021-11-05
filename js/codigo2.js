@@ -22,6 +22,7 @@ verificar.onclick = ()=>{
 
 function verificarPalabra(diagrama, texto, indice, numNodo, tiempo) {
     let nodo = diagrama.findNodeForKey(numNodo);
+    despintar(nodo);
     window.setTimeout(function(){
         pintar(nodo);
         window.setTimeout(function(){
