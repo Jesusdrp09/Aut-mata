@@ -4,19 +4,31 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
 <meta name="description" content="A finite state machine chart with editable and interactive features."/> 
-<link rel="stylesheet" href="../assets/css/style.css"/> 
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/estilos.css">
 <!-- Copyright 1998-2021 by Northwoods Software Corporation. -->
 <title>State Chart</title>
 </head>
 
 <body>
-  <div>
-    <h1>Autómata</h1>
-    <h2>Verifique una palabra</h2>
-    <input type="text" name="btn-verificar" id="btnText-verificar">
-    <input type="button" value="Verificar" id="verificar">
-    <h2 id="resultado"></h2>
+  <div id="cabecera">
+    <div>
+      <h2>Verifique una palabra</h2>
+      <input type="text" name="btn-verificar" id="btnText-verificar" placeholder="a(ab)*b &Union; ba*">
+      <input type="button" value="Verificar" id="verificar" class="btn-primary">
+      <h2 id="resultado"></h2>
+    </div>
+    <div>
+      <h1>Autómata</h1>
+      <label for="velocidad">Velocidad</label>
+      <select name="velocidad" id="velocidad" size="1">
+        <option value="2000">x0.25</option>
+        <option value="1250">x0.5</option>
+        <option value="1000" selected>x1</option>
+        <option value="750">x1.5</option>
+        <option value="500">x2</option>
+      </select>
+    </div>
   </div>
   <!-- This top nav is not part of the sample code -->
   <nav id="navTop" class="w-full z-30 top-0 text-white bg-nwoods-primary">

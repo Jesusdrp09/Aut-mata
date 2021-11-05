@@ -8,7 +8,8 @@ verificar.onclick = ()=>{
     descolorear(myDiagram, true);
     try {
         if(texto == regExp[0]){
-            verificarPalabra(myDiagram, texto, 0, 0);
+            tiempo = document.getElementById("velocidad").value;
+            verificarPalabra(myDiagram, texto, 0, 0, tiempo);
         }else{
             console.log("Hay simbolos que no pertenecen al lenguaje");
         } 
@@ -19,7 +20,7 @@ verificar.onclick = ()=>{
     }
 };
 
-function verificarPalabra(diagrama, texto, indice, numNodo) {
+function verificarPalabra(diagrama, texto, indice, numNodo, tiempo) {
     let nodo = diagrama.findNodeForKey(numNodo);
     window.setTimeout(function(){
         pintar(nodo);
@@ -35,12 +36,12 @@ function verificarPalabra(diagrama, texto, indice, numNodo) {
                         }else if(aristas.ub._dataArray[i].data.text == texto.charAt(indice)){
                             despintar(aristas.ub._dataArray[i].fromNode);
                             pintar(aristas.ub._dataArray[i].toNode);
-                            return verificarPalabra(diagrama, texto, indice + 1, aristas.ub._dataArray[i].toNode.data.id);
+                            return verificarPalabra(diagrama, texto, indice + 1, aristas.ub._dataArray[i].toNode.data.id, tiempo);
                         }
                     }
             }else{ return esAceptado(nodo); }
-        }, 1000);
-    }, 500)
+        }, tiempo);
+    }, tiempo/2)
 }
 
 function pintar(nodo) {
@@ -73,8 +74,11 @@ function descolorear(diagrama, limpiarTodo = false){
 function esAceptado(nodo, vertice = true){
     if((nodo.data.id == 3 || nodo.data.id == 2) && vertice){
         document.getElementById("resultado").innerHTML = "Estado de aceptación";
-        return 0;
+        document.getElementById("resultado").setAttribute("style","color: rgb(2, 172, 11);")
+        return 1;
     }else{
         document.getElementById("resultado").innerHTML = "Estado de NO aceptación";
+        document.getElementById("resultado").setAttribute("style", "color: rgb(173, 0, 0);")
+        return 0;
     }
 }
