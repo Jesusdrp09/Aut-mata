@@ -10,17 +10,17 @@
 <title>State Chart</title>
 </head>
 
-<body>
+<body>   
   <div id="cabecera">
     <div>
-      <h2>Verifique una palabra</h2>
+      <h2  class="lang" key="Titulo">Verifique una palabra</h2>
       <input type="text" name="btn-verificar" id="btnText-verificar" placeholder="a(ab)*b &Union; ba*">
       <input type="button" value="Verificar" id="verificar" class="btn-primary">
       <h2 id="resultado"></h2>
     </div>
     <div>
-      <h1>Autómata</h1>
-      <label for="velocidad">Velocidad</label>
+      <h1 class="lang" key="Automata">Autómata</h1>
+      <label class="lang" key="Velocidad" for="velocidad">Velocidad</label>
       <select name="velocidad" id="velocidad" size="1">
         <option value="2000">x0.25</option>
         <option value="1250">x0.5</option>
@@ -28,6 +28,15 @@
         <option value="750">x1.5</option>
         <option value="500">x2</option>
       </select>
+    </div>
+    <div class="idiomas">
+    <h1 class="lang" key="Idiomas">Idiomas: </h1>
+    <button class="translate" id="Es">Español</button>
+    <button class="translate" id="En">English</button>
+    <button class="translate" id="Fr">Frances</button>
+    <button class="translate" id="中国">中国</button>
+    <button class="translate" id="De">Deutsch</button>
+    <button class="translate" id="Po">Português</button>
     </div>
   </div>
   <!-- This top nav is not part of the sample code -->
@@ -63,7 +72,7 @@
   {"id":-2, "loc":"-50 160", "category":"End"}
   ],
   "linkDataArray": [
-    { "from": -1, "to": 0, "text": "Estado inicial" },
+    { "from": -1, "to": 0, "text": "Initial state" },
     { "from": 0, "to": 1,  "text": "a" },
     { "from": 0, "to": 3,  "text": "b" },
     { "from": 1, "to": 2,  "text": "b" },
@@ -83,4 +92,6 @@
 <!--  This script is part of the gojs.net website, and is not needed to run the sample -->
 <script src="../assets/js/goSamples.js"></script>
 <script src="js/codigo2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js" charset="utf-8"></script>
 </html>
