@@ -5,7 +5,7 @@ body{
 
 #cabecera{
     display: flex;
-    padding: 0.8rem 10rem;
+    padding: 0.8rem 8rem;
     background-color: #b7ced2;
 }
 
@@ -21,4 +21,45 @@ body{
 
 #resultado{
     font-size: 1.5rem;
+}
+
+button{
+    width: 3rem;
+    height: 1.7rem;
+}
+
+#Es{
+    background-image: url(../img/es.png);
+    background-repeat: no-repeat;
+    background-size: 3rem 1.5rem;
+}
+
+#En{
+    background-image: url(../img/us.png);
+    background-repeat: no-repeat;
+    background-size: 3rem 1.5rem;
+}
+
+#Fr{
+    background-image: url(../img/fr.png);
+    background-repeat: no-repeat;
+    background-size: 3rem 1.5rem;
+}
+
+#中国{
+    background-image: url(../img/cn.png);
+    background-repeat: no-repeat;
+    background-size: 3rem 1.5rem;
+}
+
+#De{
+    background-image: url(../img/de.png);
+    background-repeat: no-repeat;
+    background-size: 3rem 1.5rem;
+}
+
+#Po{
+    background-image: url(../img/pt.png);
+    background-repeat: no-repeat;
+    background-size: 3rem 1.5rem;
 }
