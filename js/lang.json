@@ -1,0 +1,40 @@
+{
+    "Es":{
+        "Titulo":"Verifique una palabra",
+        "Automata": "Autómata",
+        "Velocidad": "Velocidad",
+        "Idiomas": "Idiomas:"
+    },
+    "En":{
+        "Titulo":"Check a word",
+        "Automata": "Automaton",
+        "Velocidad": "Speed",
+        "Idiomas": "Languages:"
+
+    },
+    "Fr":{
+        "Titulo":"Vérifier un mot",
+        "Automata": "Automate",
+        "Velocidad": "Vitesse",
+        "Idiomas": "langues:"
+    },
+    "中国":{
+        "Titulo":"标题",
+        "Automata": "自动机",
+        "Velocidad": "速度",
+        "Idiomas": "语言:"
+    },
+    "De":{
+        "Titulo":"Titel",
+        "Automata": "Automat",
+        "Velocidad": "Geschwindigkeit",
+        "Idiomas": "Sprachen:"
+    },
+    "Po":{
+        "Titulo":"Título",
+        "Automata": "Autômato",
+        "Velocidad": "Rapidez",
+        "Idiomas": "línguas:"
+    }
+    
+  }
