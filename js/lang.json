@@ -3,38 +3,55 @@
         "Titulo":"Verifique una palabra",
         "Automata": "Autómata",
         "Velocidad": "Velocidad",
-        "Idiomas": "Idiomas:"
+        "Idiomas": "Idiomas:",
+        "aceptacion":"Estado de aceptación",
+        "noAceptacion":"Estado de NO aceptación",
+        "errorLenguaje":"Hay simbolos que no pertenecen al lenguaje"
     },
     "En":{
         "Titulo":"Check a word",
         "Automata": "Automaton",
         "Velocidad": "Speed",
-        "Idiomas": "Languages:"
-
+        "Idiomas": "Languages:",
+        "aceptacion":"Acceptance status",
+        "noAceptacion":"NO acceptance status",
+        "errorLenguaje":"There are symbols that do not belong to the language"
     },
     "Fr":{
         "Titulo":"Vérifier un mot",
         "Automata": "Automate",
         "Velocidad": "Vitesse",
-        "Idiomas": "langues:"
+        "Idiomas": "langues:",
+        "aceptacion":"Statut d'acceptation",
+        "noAceptacion":"AUCUN statut d'acceptation",
+        "errorLenguaje":"Il y a des symboles qui n'appartiennent pas à la langue"
     },
     "中国":{
         "Titulo":"标题",
         "Automata": "自动机",
         "Velocidad": "速度",
-        "Idiomas": "语言:"
+        "Idiomas": "语言:",
+        "aceptacion":"验收状态",
+        "noAceptacion":"不接受状态",
+        "errorLenguaje":"有不属于语言的符号"
     },
     "De":{
         "Titulo":"Titel",
         "Automata": "Automat",
         "Velocidad": "Geschwindigkeit",
-        "Idiomas": "Sprachen:"
+        "Idiomas": "Sprachen:",
+        "aceptacion":"Annahmestatus",
+        "noAceptacion":"KEIN Akzeptanzstatus",
+        "errorLenguaje":"Es gibt Symbole, die nicht zur Sprache gehören"
     },
     "Po":{
         "Titulo":"Título",
         "Automata": "Autômato",
         "Velocidad": "Rapidez",
-        "Idiomas": "línguas:"
+        "Idiomas": "línguas:",
+        "aceptacion":"Status de aceitação",
+        "noAceptacion":"SEM status de aceitação",
+        "errorLenguaje":"Existem símbolos que não pertencem ao idioma"
     }
     
   }

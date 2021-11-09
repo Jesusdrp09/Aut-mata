@@ -84,11 +84,15 @@ function descolorear(diagrama, limpiarTodo = false){
 function esAceptado(nodo, vertice = true){
     if((nodo.data.id == 3 || nodo.data.id == 2) && vertice){
         document.getElementById("resultado").innerHTML = "Estado de aceptación";
+        document.getElementById("resultado").setAttribute("key","aceptacion");
         document.getElementById("resultado").setAttribute("style","color: rgb(2, 172, 11);");
+        idioma();
         return 1;
     }else{
         document.getElementById("resultado").innerHTML = "Estado de NO aceptación";
+        document.getElementById("resultado").setAttribute("key","noAceptacion");
         document.getElementById("resultado").setAttribute("style", "color: rgb(173, 0, 0);");
+        idioma();
         return 0;
     }
 }
@@ -96,4 +100,33 @@ function esAceptado(nodo, vertice = true){
 function mostrarError() {
     document.getElementById("resultado").innerHTML = "Hay simbolos que no pertenecen al lenguaje";
     document.getElementById("resultado").setAttribute("style", "color: rgb(173, 0, 0);");
+    document.getElementById("resultado").setAttribute("key","errorLenguaje");
+    idioma();
+}
+
+function idioma() {
+    console.log(document.getElementById("verificar").value);
+    switch (document.getElementById("verificar").value) {
+        case "Verificar":
+            document.getElementById("Es").click();
+            break;
+        case "Check":
+            document.getElementById("En").click();
+            break;
+        case "Chèque":
+            document.getElementById("Fr").click();
+            break;
+        case "查看":
+            document.getElementById("中国").click();
+            break;
+        case "prüfen":
+            document.getElementById("De").click();
+            break;
+        case "Verifica":
+            document.getElementById("Po").click();
+            break;
+    
+        default:
+            break;
+    }
 }
