@@ -6,7 +6,8 @@
         "Idiomas": "Idiomas:",
         "aceptacion":"Estado de aceptación",
         "noAceptacion":"Estado de NO aceptación",
-        "errorLenguaje":"Hay simbolos que no pertenecen al lenguaje"
+        "errorLenguaje":"Hay simbolos que no pertenecen al lenguaje",
+       "Ejemplos":"Ejemplos"
     },
     "En":{
         "Titulo":"Check a word",
@@ -15,7 +16,8 @@
         "Idiomas": "Languages:",
         "aceptacion":"Acceptance status",
         "noAceptacion":"NO acceptance status",
-        "errorLenguaje":"There are symbols that do not belong to the language"
+        "errorLenguaje":"There are symbols that do not belong to the language",
+       "Ejemplos":"Examples"
     },
     "Fr":{
         "Titulo":"Vérifier un mot",
@@ -24,7 +26,8 @@
         "Idiomas": "langues:",
         "aceptacion":"Statut d'acceptation",
         "noAceptacion":"AUCUN statut d'acceptation",
-        "errorLenguaje":"Il y a des symboles qui n'appartiennent pas à la langue"
+        "errorLenguaje":"Il y a des symboles qui n'appartiennent pas à la langue",
+        "Ejemplos":"Exemples"
     },
     "中国":{
         "Titulo":"标题",
@@ -33,7 +36,8 @@
         "Idiomas": "语言:",
         "aceptacion":"验收状态",
         "noAceptacion":"不接受状态",
-        "errorLenguaje":"有不属于语言的符号"
+        "errorLenguaje":"有不属于语言的符号",
+        "Ejemplos":"例子"
     },
     "De":{
         "Titulo":"Titel",
@@ -42,7 +46,8 @@
         "Idiomas": "Sprachen:",
         "aceptacion":"Annahmestatus",
         "noAceptacion":"KEIN Akzeptanzstatus",
-        "errorLenguaje":"Es gibt Symbole, die nicht zur Sprache gehören"
+        "errorLenguaje":"Es gibt Symbole, die nicht zur Sprache gehören",
+       "Ejemplos":"Beispiele"
     },
     "Po":{
         "Titulo":"Título",
@@ -51,7 +56,8 @@
         "Idiomas": "línguas:",
         "aceptacion":"Status de aceitação",
         "noAceptacion":"SEM status de aceitação",
-        "errorLenguaje":"Existem símbolos que não pertencem ao idioma"
+        "errorLenguaje":"Existem símbolos que não pertencem ao idioma",
+       "Ejemplos":"Exemplos"
     }
     
   }
