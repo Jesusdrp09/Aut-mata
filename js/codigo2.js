@@ -7,7 +7,10 @@ verificar.onclick = ()=>{
     document.getElementById("resultado").innerHTML = "";
     descolorear(myDiagram, true);
     try {
-        if(texto == regExp[0]){
+        if(texto == ""){
+            pintarNodo(myDiagram.findNodeForKey(0));
+            esAceptado(myDiagram.findNodeForKey(0));
+        }else if(texto == regExp[0]){
             tiempo = document.getElementById("velocidad").value;
             verificarPalabra(texto, 0, 0, tiempo);
         }else{
@@ -105,7 +108,6 @@ function mostrarError() {
 }
 
 function idioma() {
-    console.log(document.getElementById("verificar").value);
     switch (document.getElementById("verificar").value) {
         case "Verificar":
             document.getElementById("Es").click();
